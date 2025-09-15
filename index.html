@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteShroom - Voice to Notes Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-mushroom">
+                    <div class="mushroom-top"></div>
+                    <div class="mushroom-stem"></div>
+                    <div class="mushroom-spots">
+                        <div class="spot spot-1"></div>
+                        <div class="spot spot-2"></div>
+                        <div class="spot spot-3"></div>
+                    </div>
+                </div>
+                <h1 class="logo">NoteShroom</h1>
+            </div>
+            <p class="tagline">Transform your voice into magical notes!</p>
+        </header>
+
+        <div class="mushroom mushroom-1"></div>
+        <div class="mushroom mushroom-2"></div>
+        <div class="mushroom mushroom-3"></div>
+        <div class="mushroom mushroom-4"></div>
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+
+        <div class="main-content">
+            <div class="voice-section">
+                <h2 class="section-title">VOICE INPUT</h2>
+                <div class="mic-container">
+                    <button id="micButton" class="mic-button">
+                        <span class="mic-icon">🎤</span>
+                    </button>
+                </div>
+                <div id="status" class="status">Press the microphone to start recording</div>
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">Start</button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>Stop</button>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h2 class="section-title">YOUR NOTES</h2>
+                <div id="notesDisplay" class="notes-display">
+                    Your transcribed notes will appear here...
+                </div>
+                <div class="action-buttons">
+                    <button id="saveBtn" class="btn btn-success">Save Notes</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>HOW TO USE NOTESHROOM</h3>
+            <ol>
+                <li>Click the Start button or press the microphone to begin recording</li>
+                <li>Speak clearly into your microphone</li>
+                <li>Click Stop when you're finished</li>
+                <li>Your speech will be converted to text automatically</li>
+                <li>Use the Save button to download your notes as a text file</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>NoteShroom &copy; 2023 - Made with ♥ for students</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
