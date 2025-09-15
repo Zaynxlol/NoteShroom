@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #b4e1ff 0%, #ffc5f4 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #5a3d5c;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.logo-mushroom {
+    position: relative;
+    width: 80px;
+    height: 90px;
+    margin-right: 15px;
+}
+
+.mushroom-top {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 35%, #ff8bb3 0%, #ff6b9c 20%, #e7297d 90%);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    top: 0;
+    left: 5px;
+    z-index: 2;
+}
+
+.mushroom-stem {
+    position: absolute;
+    width: 30px;
+    height: 45px;
+    background: linear-gradient(to bottom, #ffd9e3 0%, #ffb1cb 100%);
+    border-radius: 10px;
+    top: 40px;
+    left: 25px;
+    z-index: 1;
+}
+
+.mushroom-spots {
+    position: absolute;
+    z-index: 3;
+}
+
+.spot {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.spot-1 {
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    left: 20px;
+}
+
+.spot-2 {
+    width: 12px;
+    height: 12px;
+    top: 25px;
+    left: 45px;
+}
+
+.spot-3 {
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: 50px;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.8rem;
+    color: #e7297d;
+    text-shadow: 4px 4px 0px #ffcb05;
+    letter-spacing: 2px;
+    animation: float 3s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.tagline {
+    font-style: italic;
+    color: #6a4c93;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.voice-section, .notes-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #6a4c93;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mic-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mic-button {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: linear-gradient(145deg, #ff6b6b, #ff8e8e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 10px 15px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mic-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(255, 107, 107, 0.6);
+}
+
+.mic-button.recording {
+    animation: pulse 1.5s infinite;
+    background: linear-gradient(145deg, #ff3333, #ff6666);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.mic-icon {
+    font-size: 40px;
+    color: white;
+}
+
+.status {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #6a4c93;
+    min-height: 24px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #6a4c93, #9370db);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #ff8e8e, #ff6b6b);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notes-display {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 3px solid #ffcb05;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-success {
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    color: white;
+}
+
+.mushroom {
+    position: absolute;
+    width: 60px;
+    height: 70px;
+    z-index: -1;
+}
+
+.mushroom-1 {
+    top: 20px;
+    left: 5%;
+    background: radial-gradient(circle at 30% 35%, #ff8bb3 0%, #ff6b9c 20%, #e7297d 90%);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    transform: rotate(-15deg);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mushroom-2 {
+    top: 80px;
+    right: 8%;
+    background: radial-gradient(circle at 30% 35%, #7bffce 0%, #5ce1ac 20%, #00c897 90%);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    transform: rotate(15deg);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mushroom-3 {
+    bottom: 120px;
+    left: 10%;
+    background: radial-gradient(circle at 30% 35%, #ffcb05 0%, #ffb700 20%, #ff9e00 90%);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    transform: rotate(10deg);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mushroom-4 {
+    bottom: 40px;
+    right: 20%;
+    background: radial-gradient(circle at 30% 35%, #a5d8ff 0%, #74c0fc 20%, #4dabf7 90%);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    transform: rotate(-5deg);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.block {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffcb05 0%, #e6b800 100%);
+    border: 3px solid #d6a700;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.block::before {
+    content: "?";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.block-1 {
+    bottom: 40px;
+    right: 10%;
+    transform: rotate(15deg);
+}
+
+.block-2 {
+    bottom: 200px;
+    right: 15%;
+    transform: rotate(-10deg);
+}
+
+.block-3 {
+    top: 150px;
+    left: 15%;
+    transform: rotate(5deg);
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.cloud-1 {
+    width: 80px;
+    height: 40px;
+    top: 180px;
+    left: 5%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cloud-1::before, .cloud-1::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud-1::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-1::after {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    right: 15px;
+}
+
+.cloud-2 {
+    width: 70px;
+    height: 35px;
+    bottom: 100px;
+    right: 5%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cloud-2::before, .cloud-2::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud-2::before {
+    width: 35px;
+    height: 35px;
+    top: -17px;
+    left: 10px;
+}
+
+.cloud-2::after {
+    width: 45px;
+    height: 45px;
+    top: -12px;
+    right: 10px;
+}
+
+.instructions {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px dashed #6a4c93;
+}
+
+.instructions h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: #6a4c93;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #6a4c93;
+    font-size: 0.9rem;
+}
+
+/* Animation for new text */
+@keyframes newText {
+    0% { background-color: rgba(255, 203, 5, 0.3); }
+    100% { background-color: transparent; }
+}
+
+.new-text {
+    animation: newText 1s ease;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .logo-mushroom {
+        width: 60px;
+        height: 70px;
+    }
+    
+    .mushroom-top {
+        width: 50px;
+        height: 40px;
+        left: 5px;
+    }
+    
+    .mushroom-stem {
+        width: 25px;
+        height: 40px;
+        left: 17px;
+    }
+    
+    .spot-1 {
+        width: 12px;
+        height: 12px;
+        top: 10px;
+        left: 15px;
+    }
+    
+    .spot-2 {
+        width: 10px;
+        height: 10px;
+        top: 20px;
+        left: 35px;
+    }
+    
+    .spot-3 {
+        width: 8px;
+        height: 8px;
+        top: 10px;
+        left: 40px;
+    }
+    
+    .mushroom, .block, .cloud {
+        display: none;
+    }
+}
